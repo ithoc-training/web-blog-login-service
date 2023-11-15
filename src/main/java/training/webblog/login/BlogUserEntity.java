@@ -11,7 +11,7 @@ public class BlogUserEntity {
 
     @SuppressWarnings("JpaDataSourceORMInspection")
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
@@ -19,7 +19,7 @@ public class BlogUserEntity {
     private String password; // encrypted
 
     @SuppressWarnings("JpaDataSourceORMInspection")
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "blog_role_id")
     private BlogRoleEntity role;
 

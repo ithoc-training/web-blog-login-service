@@ -50,6 +50,18 @@ public class WebBlogLoginServiceApplication {
         heavyBlogger.setRole(blogger);
         blogUserRepository.save(heavyBlogger);
 
+        BlogUserEntity lightBlogger = new BlogUserEntity();
+        lightBlogger.setUsername("light.blogger");
+        lightBlogger.setPassword(BCrypt.hashpw("light.blogger", salt));
+        lightBlogger.setRole(blogger);
+        blogUserRepository.save(lightBlogger);
+
+        BlogUserEntity creativeBlogger = new BlogUserEntity();
+        creativeBlogger.setUsername("creative.blogger");
+        creativeBlogger.setPassword(BCrypt.hashpw("creative.blogger", salt));
+        creativeBlogger.setRole(blogger);
+        blogUserRepository.save(creativeBlogger);
+
         BlogUserEntity busyAdmin = new BlogUserEntity();
         busyAdmin.setUsername("busy.admin");
         busyAdmin.setPassword(BCrypt.hashpw("busy.admin", salt));
